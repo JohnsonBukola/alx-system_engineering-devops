@@ -33,16 +33,16 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-frontend  johnsonBukola-frontend-http
+frontend  johnsonbukola-frontend-http
         bind *:80
         mode http
 	http-request set-header X-Forwarded-Proto http
-        default_backend johnsonBukola-backend
+        default_backend johnsonbukola-backend
 
-frontend johnsonBukola-frontend-https
-	bind *:443 ssl crt /etc/haproxy/certs/www.johnsonBukola.tech.pem
+frontend johnsonbukola-frontend-https
+	bind *:443 ssl crt /etc/haproxy/certs/www.johnsonbukola.tech.pem
 	http-request set-header X-Forwarded-Proto https
-	default_backend johnsonBukola-backend
+	default_backend johnsonbukola-backend
 
 backend johnsonBukola-backend
         balance roundrobin
